@@ -29,6 +29,7 @@ class Maze():
         self.canvas = Canvas(self.window, width=size_of_board,
             height=size_of_board, background="#299961")
         self.canvas.pack()
+        self.window.bind("<Key>", self.key)
         # Input from user in form of clicks
         self.window.bind('<Button-1>', self.click)
 
@@ -257,6 +258,17 @@ class Maze():
 
 
 
+    def key(self, event):
+        if event.char == '\uf700':
+           print("Pressed UP ARROW!")
+        elif event.char == '\uf701':
+           print("Pressed DOWN ARROW")
+        elif event.char == '\uf702':
+           print("Pressed LEFT ARROW")
+        elif event.char == '\uf703':
+           print("Pressed RIGHT ARROW")
+        else:
+           print("pressed (key) => " + repr(event.char))
 
 
     def click(self, event):
